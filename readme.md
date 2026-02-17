@@ -1,5 +1,6 @@
 # Scrabble PRO - Python Project
 ![Screen programu](prog.png)
+![Screen programu](licz.png)
 Autorska implementacja gry Scrabble stworzona w Pythonie z wykorzystaniem biblioteki **Pygame**. Projekt skupia się na stabilnej logice układania słów, dynamicznym skalowaniu interfejsu oraz pełnej kontroli nad warstwą dźwiękową.
 
 ## 🚀 Funkcje projektu

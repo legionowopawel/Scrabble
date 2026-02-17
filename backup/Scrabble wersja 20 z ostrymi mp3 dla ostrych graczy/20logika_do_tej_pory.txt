@@ -1,0 +1,42 @@
+Masz całkowitą rację. Przyznaję, że w procesie poprawiania skomplikowanej logiki, skupienie się na jednym punkcie czasem odciąga moją "uwagę" od detali interfejsu, które są kluczowe dla komfortu gry. Twoja uwaga o przypominaniu mi zasad jest bardzo słuszna – to pozwoli nam uniknąć kroków w tył.
+
+Oto podsumowanie obecnej, poprawnej logiki programu (stan na ostatni wysłany przeze mnie kod), którą od teraz traktuję jako **nienaruszalny fundament**:
+
+### 1. Logika "Zasady Siedmiu" (Mechanika Liter)
+
+* **Dlaczego działa dobrze:** Program pilnuje, aby suma liter (na stojaku + pod myszką + nowe na planszy) zawsze wynosiła 7, dopóki worek nie jest pusty.
+* **Po ruchu:** Po kliknięciu "OK" i zaliczeniu punktów, gracz automatycznie dobiera z worka dokładnie tyle liter, ile zużył.
+* **Po wymianie:** Po wymianie zaznaczonych liter, gracz otrzymuje nowe, zachowując komplet 7 sztuk.
+
+### 2. Mechanika Stojaka (Bezpieczeństwo)
+
+* **Dlaczego działa dobrze:** Naprawiliśmy krytyczny błąd "znikających liter". Teraz, jeśli trzymasz literę ("floating tile") i klikniesz w obszar stojaka swojego gracza, litera **bezpiecznie wraca** do Twojej puli, zamiast zostać nadpisaną przez inną.
+* **Intuicyjność:** Stojak służy teraz zarówno do brania liter, jak i do ich odkładania.
+
+### 3. Selektywna Wymiana Liter
+
+* **Dlaczego działa dobrze:** Nie wymieniamy już wszystkiego "jak leci". Gracz klika w litery na stojaku (podświetlają się na niebiesko), a przycisk "WYMIANA" zabiera tylko te wybrane. Jeśli nic nie zaznaczono, kliknięcie przycisku anuluje tryb wymiany.
+
+### 4. Plansza i Promocje (Wizualizacja)
+
+* **Dlaczego działa dobrze:** Pola na planszy mają poprawne kolory (czerwone dla słów, niebieskie dla liter) oraz **tekstowe oznaczenia** (np. 3S, 2L) pobierane z pliku `plansza.ods`.
+* **Kalkulator:** Po ułożeniu słowa, program wyświetla czytelne równanie matematyczne (np. `KOT = 5 + 1 + 2 = 8`), co pozwala graczowi zrozumieć, skąd wziął się wynik.
+
+### 5. Interfejs i Skalowanie
+
+* **Dlaczego działa dobrze:**
+* **4 Przyciski na dole:** (OK, WYMIANA, PODSUMUJ, WYJDŹ) są zawsze widoczne i poprawnie rozłożone.
+* **Menu Rozdzielczości:** Przycisk w lewym górnym rogu pozwala na zmianę rozmiaru okna zgodnie z listą w `rozdzielczosc.txt`.
+* **Dynamiczny układ:** Stojaki są zawsze w stałej, czytelnej odległości od planszy (1 kafel odstępu), niezależnie od rozdzielczości.
+
+
+
+### 6. Licznik Worka i Tury
+
+* **Dlaczego działa dobrze:** Na górnym pasku zawsze widać, ile dokładnie liter zostało w worku (`W worku: X`). Gra poprawnie przełącza tury między Graczem 1 a Graczem 2 po każdej zatwierdzonej akcji.
+
+---
+
+**Moja deklaracja:** Przy każdej kolejnej modyfikacji, którą mi zlecisz, będę sprawdzał kod pod kątem powyższych punktów. Jeśli będę musiał zmienić np. funkcję `draw`, upewnię się dwa razy, czy napisy promocji i menu rozdzielczości nadal tam są.
+
+Czy to podsumowanie zgadza się z Twoimi odczuciami co do tego, jak gra powinna obecnie funkcjonować? Jeśli tak, możemy iść dalej. Co chciałbyś teraz dopracować?

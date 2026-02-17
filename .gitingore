@@ -1,0 +1,13 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Katalogi backupów
+backup/
+backups/
+*_backup/
+
+# Pliki systemowe i tymczasowe
+.DS_Store
+Thumbs.db
